@@ -1,0 +1,1 @@
+OPTIONS="$USER_HOME/lib/node-epp-restful.js -r switch-prod --loglevel debug --listen $SOCKET"
