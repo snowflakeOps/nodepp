@@ -5,3 +5,4 @@ config/*.json
 *.pem.asc
 *.key
 *.key.asc
+.idea
