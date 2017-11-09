@@ -1,0 +1,42 @@
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+    <command>
+        <transfer op="request">
+            <domain:transfer xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+                <domain:name>test-domain.com</domain:name>
+                <domain:period unit="y">1</domain:period>
+                <domain:authInfo>
+                    <domain:pw roid="P-12345">2fooBAR</domain:pw>
+                </domain:authInfo>
+            </domain:transfer>
+        </transfer>
+        <extension>
+            <command-ext:command-ext xmlns:command-ext="http://www.metaregistrar.com/epp/command-ext-1.0">
+                <command-ext-domain:domain>
+                    <command-ext-domain:transfer>
+                        <domainExtensionData>
+                            <command-ext-domain:ns>
+                                <command-ext-domain:hostObj>ns1</command-ext-domain:hostObj>
+                                <command-ext-domain:hostObj>ns2</command-ext-domain:hostObj>
+                            </command-ext-domain:ns>
+                            <command-ext-domain:registrant>registrantContact</command-ext-domain:registrant>
+                            <command-ext-domain:contact type="admin">adminContact</command-ext-domain:contact>
+                            <command-ext-domain:contact type="tech">techContact</command-ext-domain:contact>
+                            <command-ext-domain:contact type="billing">billingContact</command-ext-domain:contact>
+                        </domainExtensionData>
+                    </command-ext-domain:transfer>
+                </command-ext-domain:domain>
+            </command-ext:command-ext>
+        </extension>
+        <clTRID>test-1234</clTRID>
+    </command>
+</epp>
+
+
+<command-ext-domain:ns>
+<command-ext-domain:hostObj>ns1.metaregistrar.com</command-ext-domain:hostObj>
+<command-ext-domain:hostObj>ns2.metaregistrar.com</command-ext-domain:hostObj>
+</command-ext-domain:ns>
+<command-ext-domain:registrant>RP01mS4QzdukMwTuVhN45E5m</command-ext-domain:registrant>
+<command-ext-domain:contact type="admin">RP01mS4QzdukMwTuVhN45E5m</command-ext-domain:contact>
+<command-ext-domain:contact type="tech">RP01mS4QzdukMwTuVhN45E5m</command-ext-domain:contact>
+<command-ext-domain:contact type="billing">RP01mS4QzdukMwTuVhN45E5m</command-ext-domain:contact>

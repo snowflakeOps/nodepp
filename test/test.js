@@ -368,12 +368,20 @@ describe( 'EPP serialisation', function() {
                     },
                     "extension": {
                         "commandExt": {
-                            "asdf": "test"
+                            "ns": [ "ns1", "ns2" ],
+                            "contact": {
+                                "admin": "adminContact",
+                                "tech": "techContact",
+                                "billing": "billingContact"
+                            },
+                            "registrant": "registrantContact"
                         }
                     }
                 };
                 let xml = epp.transferDomain( transferDomain, 'test-1234' );
                 expect( xml ).to.match( /<transfer op="request"/ );
+                expect( xml ).to.match( /<command-ext-domain:contact type="tech">techContact<\/command-ext-domain:contact>/ );
+                expect( xml ).to.match( /<command-ext-domain:hostObj>ns1<\/command-ext-domain:hostObj><command-ext-domain:hostObj>ns2<\/command-ext-domain:hostObj>/ );
 
                 let transferReject = {
                     "name": "test-domain.com",
